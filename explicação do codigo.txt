@@ -1,0 +1,156 @@
+EXPLICAÇÃO COMPLETA DO BLOCO ".viagem" (SEÇÃO DE DICAS)
+
+.viagem {
+display: grid;
+}
+Define que o container vira um grid layout.
+Agora os elementos filhos não ficam mais empilhados nem alinhados por flex,
+eles passam a ocupar "células" organizadas automaticamente.
+
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+Cria colunas automáticas.
+auto-fit = o navegador cria quantas colunas couberem na tela.
+minmax(260px, 1fr) = cada card nunca fica menor que 260px,
+mas pode crescer ocupando espaço livre.
+Resultado: layout responsivo sem media query.
+
+background: var(--fundo-geral);
+Aplica a cor de fundo da seção usando variável CSS definida no :root.
+Isso permite mudar o tema do site inteiro alterando só um lugar.
+
+---
+
+.containerViagem {
+Seleciona cada card individual dentro da seção.
+
+display: flex;
+Ativa flexbox dentro do card.
+Aqui o flex é correto: alinhar conteúdo interno.
+
+align-items: center;
+Centraliza verticalmente o ícone e o texto.
+
+gap: 16px;
+Cria espaçamento entre o ícone e o texto sem usar margin.
+
+padding: 26px 24px;
+Espaço interno do card (altura e largura).
+Isso cria área respirável e evita aparência apertada.
+
+background: white;
+Fundo branco do card para separar do fundo cinza da página.
+
+border-right: 1px solid var(--divisores);
+Linha divisória entre os cards.
+Serve como separador visual horizontal.
+
+position: relative;
+Permite posicionar pseudo-elementos (::before) dentro do card
+usando coordenadas absolutas relativas a ele.
+
+transition: transform .25s ease, box-shadow .25s ease;
+Define animação suave quando o card sofre hover.
+Transform e sombra não mudam instantaneamente.
+
+---
+
+.containerViagem::before {
+Pseudo-elemento decorativo (não existe no HTML).
+
+content: "";
+Cria o elemento invisível necessário para estilizar.
+
+position: absolute;
+Permite posicionar livremente dentro do card.
+
+left: 0;
+Gruda na borda esquerda do card.
+
+top: 20%;
+Começa 20% abaixo do topo (fica centralizado verticalmente).
+
+width: 4px;
+Espessura da barra lateral.
+
+height: 60%;
+Altura parcial para parecer indicador moderno, não borda inteira.
+
+background: var(--laranja-principal);
+Cor destaque da identidade visual.
+
+border-radius: 4px;
+Deixa a barra arredondada.
+
+opacity: 0;
+Começa invisível.
+
+transition: .25s;
+Anima a aparição da barra.
+
+---
+
+.containerViagem:hover {
+Ativado quando o mouse passa por cima do card.
+
+transform: translateY(-4px);
+Move o card levemente para cima criando sensação de elevação.
+
+box-shadow: 0 10px 25px rgba(0,0,0,.08);
+Cria sombra para simular profundidade.
+O cérebro interpreta como elemento interativo.
+
+---
+
+.containerViagem:hover::before {
+opacity: 1;
+A barra lateral aparece ao passar o mouse.
+Serve como feedback visual de foco.
+
+---
+
+.containerViagem:last-child {
+border-right: none;
+Remove a linha divisória do último card
+para não ficar borda sobrando no final da fileira.
+
+---
+
+.containerViagem img {
+width: 52px;
+height: 52px;
+Padroniza tamanho dos ícones.
+Evita desalinhamento entre cards.
+
+---
+
+.textViagem {
+display: flex;
+flex-direction: column;
+gap: 4px;
+Empilha título e subtítulo verticalmente com pequeno espaçamento.
+
+---
+
+.viagem-titulo {
+font-weight: 600;
+Deixa o título semi-negrito.
+
+font-size: 1.05rem;
+Tamanho levemente maior que texto comum.
+
+color: var(--titulo-forte);
+Cor principal de leitura.
+
+---
+
+.subtitulo-viagem {
+font-size: .9rem;
+Menor que o título para criar hierarquia visual.
+
+color: var(--texto-sec);
+Cor secundária mais suave para não competir com o título.
+}
+
+usar grid para estabelecer posição de cards ou quaisquer coisa do "lado de fora", já o flex, para estabelecer posição dentro dos cards já posicionados pelo grid.
+
+o trasnform pode não funcionar caso o elemento tenha o display inline como padrão

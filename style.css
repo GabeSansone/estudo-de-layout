@@ -1,0 +1,532 @@
+/* ================= RESET ================= */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body::selection {
+    background-color: var(--laranja-hover);
+    color: white;
+}
+
+body {
+    display: grid;
+    grid-auto-rows: min-content;
+    font-family: "Inter", sans-serif;
+    background: var(--fundo-geral);
+}
+
+/* ================= FONTES ================= */
+
+@font-face {
+    font-family: "Inter";
+    src: url(/font/Inter/Inter-VariableFont_opsz\,wght.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url(/font/Poppins/Poppins-Regular.ttf);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Poppins", sans-serif;
+}
+
+/* ================= CORES ================= */
+
+:root {
+    --laranja-principal: #F97316;
+    --laranja-hover: #EA580C;
+    --laranja-detalhes: #FDBA74;
+
+    --fundo-geral: #F5F7FA;
+    --cards: #FFFFFF;
+    --bordas-suave: #E5E7EB;
+    --divisores: #D1D5DB;
+
+    --titulo-forte: #1F2937;
+    --texto-normal: #4B5563;
+    --texto-sec: #6B7280;
+    --texto-apgd: #9CA3AF;
+
+    --fundo-header: #EBEBEB;
+    --fundo-footer: #1F2937;
+
+    --fundo-login: #111827;
+    --hover-login: #000000;
+    --text-login: #FFFFFF;
+    --borda-login: #1F2937;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--fundo-header);
+    height: 10vh;
+    padding: 0 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--titulo-forte);
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+}
+
+.nav {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav a {
+    position: relative;
+    text-decoration: none;
+    color: var(--titulo-forte);
+    padding: 6px 2px;
+}
+
+/* underline animado */
+.nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background: var(--laranja-hover);
+    transition: .35s cubic-bezier(.4, 0, .2, 1);
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+.btn {
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: 1px solid var(--borda-login);
+    background: var(--fundo-login);
+    color: white;
+}
+
+/* ================= HERO ================= */
+
+main {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    background: url(/img/cachorro-feliz-capa.webp) center/cover no-repeat;
+    position: relative;
+}
+
+/* overlay escuro pra legibilidade */
+main::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .35);
+}
+
+.principal {
+    position: relative;
+    z-index: 1;
+    max-width: 650px;
+    margin-left: clamp(20px, 6vw, 150px);
+    color: white;
+    text-align: center;
+}
+
+.principal h1 {
+    font-size: clamp(32px, 5vw, 56px);
+}
+
+.principal p {
+    margin: 0px 0 20px;
+    color: #f1f1f1;
+}
+
+.btn-1 {
+    background: var(--laranja-principal);
+    border: 1px solid var(--laranja-detalhes);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 10px;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+
+.btn-2 {
+    background: white;
+    color: var(--texto-normal);
+    border: 1px solid var(--bordas-suave);
+    padding: 10px 18px;
+    border-radius: 10px;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.btn-1,
+.btn-2 {
+    display: inline-block;
+}
+
+.btn-1:hover,
+.btn-2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.500);
+    ;
+}
+
+/* ================= INFO VIAGEM ================= */
+
+/* ===============================
+   SEÇÃO DICAS / VIAGEM
+   =============================== */
+
+.viagem {
+    display: grid;
+
+    /* 3 colunas no desktop, 1 no celular automático */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 0;
+    /* mantém aparência alinhada */
+
+    width: 100%;
+}
+
+/* Cada bloco individual */
+.containerViagem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+    padding: 20px;
+
+    background: white;
+
+    border-right: 1px solid var(--divisores);
+    border-bottom: 5px double rgb(163, 163, 163);
+}
+
+/* Remove a borda direita do último item */
+
+/* ===============================
+   SEÇÃO DICAS / VIAGEM
+   =============================== */
+
+
+
+.viagem {
+    display: grid;
+
+    /* 3 colunas no desktop, 1 no celular automático */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 0;
+    /* mantém aparência alinhada */
+
+    width: 100%;
+}
+
+/* Cada bloco individual */
+.containerViagem-1,
+.containerViagem-2,
+.containerViagem-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+    padding: 20px;
+
+    background: white;
+    height: 100px;
+    border-right: 1px solid var(--divisores);
+    border-bottom: 5px double rgb(163, 163, 163);
+}
+
+/* Remove a borda direita do último item */
+.containerViagem:last-child {
+    border-right: none;
+}
+
+[class^=containerViagem] img {
+    width: 48px;
+    height: 48px;
+}
+
+/* Texto interno */
+.textViagem {
+    text-align: left;
+}
+
+.viagem-titulo {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--titulo-forte);
+}
+
+.subtitulo-viagem {
+    font-size: 0.85rem;
+    color: var(--texto-apgd);
+}
+
+
+
+/* ================= DESTINOS ================= */
+
+.titulo-destinos {
+    margin: 40px 20px 20px;
+}
+
+.titulo-destinos p {
+    color: var(--texto-apgd);
+}
+
+/* GRID DOS CARDS */
+.lugares {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+/* CARD */
+
+.card-lugar {
+    background: var(--cards);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--bordas-suave);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.card-lugar:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, .08);
+}
+
+.card-lugar img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.textLugar {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.tituloLugar {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--titulo-forte);
+}
+
+.descLugar {
+    font-size: .95rem;
+    color: var(--texto-apgd);
+}
+
+/*Section 3*/
+/*dicas*/
+.dicas {
+    border-bottom: 5px double var(--laranja-principal);
+}
+
+/* titulo */
+
+.titulo-dicas {
+    margin: 40px 20px 20px;
+}
+
+.titulo-dicas p {
+    color: var(--texto-apgd);
+}
+
+/*container*/
+
+.containersTotal {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.containerDicas {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px;
+    background: #fff;
+    border-radius: 14px;
+    border: 2px solid var(--bordas-suave);
+    text-decoration: none;
+    color: inherit;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.containerDicas:hover {
+    border: 2px solid var(--bordas-suave);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.containerDicas img {
+    width: 40px;
+    height: 40px;
+}
+
+.textDicas {
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-container {
+    font-weight: 600;
+}
+
+.subtitulo-dicas {
+    font-size: 14px;
+    color: #666;
+}
+
+
+/* <===== PRONTO ======> */
+
+.pronto {
+    height: 40vh;
+    background: url(/img/grey-clouded-sky-background.webp) center / cover no-repeat;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-bottom: 5px double var(--laranja-principal);
+}
+
+.pronto>* {
+    z-index: 1;
+    position: relative;
+}
+
+.pronto::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.45);
+}
+
+.pronto h2 {
+    font-size: 2.2em;
+}
+
+.pronto p {
+    margin-bottom: 20px;
+    color: var(--texto-normal);
+}
+
+.pronto a {
+    border: 0.1em solid var(--laranja-detalhes);
+    padding: 10px;
+    background: linear-gradient(to top, var(--laranja-principal), rgb(197, 66, 0));
+    color: var(--text-login);
+    border-radius: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pronto a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/*Footer*/
+footer {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    background: var(--fundo-footer);
+    color: white;
+    padding: 40px 20px;
+}
+
+/* cada coluna */
+.footer-col {
+    min-width: 0;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer li {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: white;
+    text-decoration: underline 1px solid rgba(255, 255, 255, 0.25);
+    transition: .2s;
+}
+
+footer a:hover {
+    color: var(--laranja-hover);
+    text-decoration-color: var(--laranja-hover);
+}
+
+/* título */
+footer h3 {
+    margin-bottom: 12px;
+    position: relative;
+    display: inline-block;
+}
+
+footer h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 120px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* redes sociais */
+.img-footer {
+    grid-column: 6;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+.img-footer img {
+    width: 28px;
+    height: 28px;
+    opacity: .8;
+    transition: .2s;
+}
+
+.img-footer img:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
