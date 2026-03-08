@@ -20,15 +20,16 @@ body {
 }
 
 /* ================= FONTES ================= */
+/* Removido a / do início dos caminhos das fontes */
 
 @font-face {
     font-family: "Inter";
-    src: url(/font/Inter/Inter-VariableFont_opsz\,wght.ttf);
+    src: url(font/Inter/Inter-VariableFont_opsz\,wght.ttf);
 }
 
 @font-face {
     font-family: 'Poppins';
-    src: url(/font/Poppins/Poppins-Regular.ttf);
+    src: url(font/Poppins/Poppins-Regular.ttf);
 }
 
 h1,
@@ -132,7 +133,8 @@ main {
     min-height: 70vh;
     display: flex;
     align-items: center;
-    background: url(/img/cachorro-feliz-capa.webp) center/cover no-repeat;
+    /* Removido a / do início da imagem */
+    background: url(img/cachorro-feliz-capa.webp) center/cover no-repeat;
     position: relative;
 }
 
@@ -190,81 +192,32 @@ main::before {
 .btn-2:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.500);
-    ;
 }
 
 /* ================= INFO VIAGEM ================= */
 
-/* ===============================
-   SEÇÃO DICAS / VIAGEM
-   =============================== */
-
 .viagem {
     display: grid;
-
-    /* 3 colunas no desktop, 1 no celular automático */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-
     gap: 0;
-    /* mantém aparência alinhada */
-
     width: 100%;
 }
 
-/* Cada bloco individual */
-.containerViagem {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 12px;
-    padding: 20px;
-
-    background: white;
-
-    border-right: 1px solid var(--divisores);
-    border-bottom: 5px double rgb(163, 163, 163);
-}
-
-/* Remove a borda direita do último item */
-
-/* ===============================
-   SEÇÃO DICAS / VIAGEM
-   =============================== */
-
-
-
-.viagem {
-    display: grid;
-
-    /* 3 colunas no desktop, 1 no celular automático */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-
-    gap: 0;
-    /* mantém aparência alinhada */
-
-    width: 100%;
-}
-
-/* Cada bloco individual */
 .containerViagem-1,
 .containerViagem-2,
 .containerViagem-3 {
     display: flex;
     align-items: center;
     justify-content: center;
-
     gap: 12px;
     padding: 20px;
-
     background: white;
     height: 100px;
     border-right: 1px solid var(--divisores);
     border-bottom: 5px double rgb(163, 163, 163);
 }
 
-/* Remove a borda direita do último item */
-.containerViagem:last-child {
+.containerViagem-3 {
     border-right: none;
 }
 
@@ -273,7 +226,6 @@ main::before {
     height: 48px;
 }
 
-/* Texto interno */
 .textViagem {
     text-align: left;
 }
@@ -289,8 +241,6 @@ main::before {
     color: var(--texto-apgd);
 }
 
-
-
 /* ================= DESTINOS ================= */
 
 .titulo-destinos {
@@ -301,15 +251,12 @@ main::before {
     color: var(--texto-apgd);
 }
 
-/* GRID DOS CARDS */
 .lugares {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     padding: 20px;
 }
-
-/* CARD */
 
 .card-lugar {
     background: var(--cards);
@@ -348,13 +295,10 @@ main::before {
     color: var(--texto-apgd);
 }
 
-/*Section 3*/
-/*dicas*/
+/* Section 3 - Dicas */
 .dicas {
     border-bottom: 5px double var(--laranja-principal);
 }
-
-/* titulo */
 
 .titulo-dicas {
     margin: 40px 20px 20px;
@@ -363,8 +307,6 @@ main::before {
 .titulo-dicas p {
     color: var(--texto-apgd);
 }
-
-/*container*/
 
 .containersTotal {
     display: grid;
@@ -376,157 +318,4 @@ main::before {
 .containerDicas {
     display: flex;
     align-items: center;
-    gap: 15px;
-    padding: 18px;
-    background: #fff;
-    border-radius: 14px;
-    border: 2px solid var(--bordas-suave);
-    text-decoration: none;
-    color: inherit;
-    transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.containerDicas:hover {
-    border: 2px solid var(--bordas-suave);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-}
-
-.containerDicas img {
-    width: 40px;
-    height: 40px;
-}
-
-.textDicas {
-    display: flex;
-    flex-direction: column;
-}
-
-.titulo-container {
-    font-weight: 600;
-}
-
-.subtitulo-dicas {
-    font-size: 14px;
-    color: #666;
-}
-
-
-/* <===== PRONTO ======> */
-
-.pronto {
-    height: 40vh;
-    background: url(/img/grey-clouded-sky-background.webp) center / cover no-repeat;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    border-bottom: 5px double var(--laranja-principal);
-}
-
-.pronto>* {
-    z-index: 1;
-    position: relative;
-}
-
-.pronto::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(255, 255, 255, 0.45);
-}
-
-.pronto h2 {
-    font-size: 2.2em;
-}
-
-.pronto p {
-    margin-bottom: 20px;
-    color: var(--texto-normal);
-}
-
-.pronto a {
-    border: 0.1em solid var(--laranja-detalhes);
-    padding: 10px;
-    background: linear-gradient(to top, var(--laranja-principal), rgb(197, 66, 0));
-    color: var(--text-login);
-    border-radius: 10px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.pronto a:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-}
-
-/*Footer*/
-footer {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    background: var(--fundo-footer);
-    color: white;
-    padding: 40px 20px;
-}
-
-/* cada coluna */
-.footer-col {
-    min-width: 0;
-}
-
-footer ul {
-    list-style: none;
-}
-
-footer li {
-    margin-bottom: 10px;
-}
-
-footer a {
-    color: white;
-    text-decoration: underline 1px solid rgba(255, 255, 255, 0.25);
-    transition: .2s;
-}
-
-footer a:hover {
-    color: var(--laranja-hover);
-    text-decoration-color: var(--laranja-hover);
-}
-
-/* título */
-footer h3 {
-    margin-bottom: 12px;
-    position: relative;
-    display: inline-block;
-}
-
-footer h3::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 120px;
-    height: 3px;
-    background: rgba(255, 255, 255, 0.12);
-}
-
-/* redes sociais */
-.img-footer {
-    grid-column: 6;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    gap: 12px;
-}
-
-.img-footer img {
-    width: 28px;
-    height: 28px;
-    opacity: .8;
-    transition: .2s;
-}
-
-.img-footer img:hover {
-    opacity: 1;
-    transform: translateY(-2px);
-}
+    gap:
